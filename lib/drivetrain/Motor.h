@@ -10,6 +10,7 @@
 const int STOP = 0;
 const int FORWARD = 1;
 const int BACKWARD = 2;
+const int NO_DIRECTION = 3;
 
 class Motor {
 public:

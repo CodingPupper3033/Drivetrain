@@ -10,15 +10,15 @@ Drivetrain::Drivetrain() {
     drivetrainInput = DrivetrainInput();
 }
 
-void Drivetrain::setup(MotorPins *motorPinsIn, DrivetrainInput::DrivetrainInputPin *drivetrainInputPinsIn) {
+void Drivetrain::setup(MotorPins *motorPinsIn) {
     leftMotor.setup(motorPinsIn->pin1, motorPinsIn->pin2);
     rightMotor.setup(motorPinsIn->pin3, motorPinsIn->pin4);
-    drivetrainInput.setup(drivetrainInputPinsIn);
+    drivetrainInput.setup();
 }
 
 void Drivetrain::loop() {
     byte direction = drivetrainInput.getDirection();
 
-    leftMotor.setDirection(direction >> 2);
+    leftMotor.setDirection((direction >> 2) & 3);
     rightMotor.setDirection(direction & 3);
 }

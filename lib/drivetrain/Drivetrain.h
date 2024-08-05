@@ -17,7 +17,7 @@ public:
     };
 
     Drivetrain();
-    void setup(MotorPins *motorPinsIn, DrivetrainInput::DrivetrainInputPin *drivetrainInputPinsIn);
+    void setup(MotorPins *motorPinsIn);
     void loop();
 private:
     Motor leftMotor;
