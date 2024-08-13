@@ -18,8 +18,8 @@ void Motor::setDirection(uint8_t direction) {
     if (direction == NO_DIRECTION) return;
     this->direction = direction;
 
-    Serial.print("Setting direction to ");
-    Serial.println(direction, BIN);
+    //Serial.print("Setting direction to ");
+    //Serial.println(direction, BIN);
 
     digitalWrite(pin1, direction & 1);
     digitalWrite(pin2, direction & 2);

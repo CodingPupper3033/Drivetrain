@@ -5,7 +5,6 @@
 #ifndef DRIVETRAIN_DRIVETRAIN_H
 #define DRIVETRAIN_DRIVETRAIN_H
 #include "Motor.h"
-#include "DrivetrainInput.h"
 
 class Drivetrain {
 public:
@@ -18,11 +17,10 @@ public:
 
     Drivetrain();
     void setup(MotorPins *motorPinsIn);
-    void loop();
+    void setDirection(byte direction);
 private:
-    Motor leftMotor;
-    Motor rightMotor;
-    DrivetrainInput drivetrainInput;
+    Motor leftMotor{};
+    Motor rightMotor{};
 };
 
 
